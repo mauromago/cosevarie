@@ -6,8 +6,8 @@
 #define Spin D2 //sensor pin
 
 volatile int check = 0;
-const char* ssid = "BASE";
-const char* password = "";
+const char* ssid = "SSID";
+const char* password = "PSW";
 int interruptCounter = 0;
 int numberOfInterrupts = 10;
 const char* mqtt_server = "192.168.1.131";
