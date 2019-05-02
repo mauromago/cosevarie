@@ -6,7 +6,7 @@
 #include <PubSubClient.h>
 #include "EmonLib.h"  // Include Emon Library
 //-------------------------------------------
-// DEFINE
+// variables
 //-------------------------------------------
 #define SLEEP_DELAY_IN_SECONDS  1800
 #define Cicli 100
@@ -26,10 +26,14 @@ double Irms = 0;
 double IrmsSum = 0;
 double IrmsMed = 0;
 int Cont = 0;
+//-------------------------------------------
+// Instances
+//-------------------------------------------
 WiFiClient espClient;
 PubSubClient client(espClient);
 EnergyMonitor emon1; // Create an instance
 
+//-------------------------------------------
 void setup_wifi() {
   delay(10);
   WiFi.config(ip, gateAway, subnet);
@@ -39,18 +43,20 @@ void setup_wifi() {
   }
 }
 
-void callback(char* topic, byte* payload, unsigned int length) {
+//-------------------------------------------
+void callback(char* topic, byte* payload, unsigned int length) { 
 }
 
+//-------------------------------------------
 void reconnect() {
-  while (!client.connected()) {
-    if (client.connect("ESP8266Client", mqtt_username, mqtt_password)) {
+  while (!client.connected()) {    if (client.connect("ESP8266Client", mqtt_username, mqtt_password)) {
     } else {
     delay(5000);
     }
   }
 }
 
+//-------------------------------------------
 void setup()
 {  
   Serial.begin(115200);
@@ -59,6 +65,7 @@ void setup()
   client.setCallback(callback);
 }
 
+//-------------------------------------------
 void loop()
 {
   client.loop();
