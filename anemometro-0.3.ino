@@ -87,8 +87,10 @@ void loop() {
   if (!client.connected()) {
       reconnect(); }
   client.publish(mqtt_topic, countStr);
+     client.publish(mqtt_topic2, OldTime); // Tempo per il debug del ciclo
   pulseCount = 0;
   oldTime = millis();
+      client.publish(mqtt_topic2, OldTime); // Tempo per il debug del ciclo
   attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
   delay(0);
  }
