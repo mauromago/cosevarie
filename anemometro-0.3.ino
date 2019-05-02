@@ -94,6 +94,8 @@ void loop() {
   attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
   delay(0);
  }
+   else
+      {delay(0);}
 }
 
 
