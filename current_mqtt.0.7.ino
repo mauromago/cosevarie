@@ -49,7 +49,8 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
 //-------------------------------------------
 void reconnect() {
-  while (!client.connected()) {    if (client.connect("ESP8266Client", mqtt_username, mqtt_password)) {
+  while (!client.connected()) {
+    if (client.connect("ESP8266Client", mqtt_username, mqtt_password)) { //????
     } else {
     delay(5000);
     }
@@ -77,16 +78,16 @@ void loop()
     }  
   IrmsMed = IrmsMed + IrmsSum;
   IrmsSum = 0;
-  Serial.println(IrmsMed);
+  Serial.println(IrmsMed); // poi togliere
   }  
   Irms = IrmsMed/(Cicli*Cicli2);
   IrmsMed = 0;
   dtostrf(Irms, 2, 2, strValore);
-  Serial.print(Irms);
-  Serial.print("--");
-  Serial.println(strValore);
+  Serial.print(Irms); // poi togliere
+  Serial.print("--"); / poi togliere
+  Serial.println(strValore); / poi togliere
   setup_wifi();
-  Serial.print(".");
+  Serial.print("."); / poi togliere
   if (!client.connected()) {
     reconnect(); }
   Serial.print(".");
