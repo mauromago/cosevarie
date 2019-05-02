@@ -1,8 +1,13 @@
 // EmonLibrary examples openenergymonitor.org, Licence GNU GPL V
+//-------------------------------------------
+// INCLUDE
+//-------------------------------------------
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include "EmonLib.h"  // Include Emon Library
-
+//-------------------------------------------
+// DEFINE
+//-------------------------------------------
 #define SLEEP_DELAY_IN_SECONDS  1800
 #define Cicli 100
 #define Cicli2 10
