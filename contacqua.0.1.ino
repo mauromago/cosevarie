@@ -23,8 +23,8 @@ bool stopped = false;
 char strValore[2] = "X";
 
 IPAddress subnet(255, 255, 255, 0); // set subnet mask to match your network
-IPAddress ip(192, 168, 1, 216); // controllare che non sia doppio
-IPAddress gateAway(192, 168, 1, 254);
+IPAddress ip(*.*.*.*); // controllare che non sia doppio
+IPAddress gateAway(*.*.*.*);
 IPAddress DNS(8, 8, 8, 8);
 WiFiClient espClient;
 PubSubClient client(espClient);
